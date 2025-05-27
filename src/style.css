@@ -1,0 +1,82 @@
+
+:root {
+  --primary-color: #42b883;
+  --bg-color: #f9f9f9;
+  --text-color: #2c3e50;
+  --accent-color: #35495e;
+}
+
+body {
+  background-color: var(--bg-color);
+  margin: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.projects li {
+  background-color: #eefaf6;
+  border-left: 4px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
