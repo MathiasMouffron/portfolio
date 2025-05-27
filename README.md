@@ -1,4 +1,4 @@
-# Portfolio — Mathias Mouffron
+# Portfolio Mathias Mouffron
 
 Bienvenue sur mon portfolio personnel.  
 Je suis **développeur web junior**, et je me forme actuellement à la stack **MERN**, avec une première expérience sur **Vue.js**, **Node.js** et **Express**.
