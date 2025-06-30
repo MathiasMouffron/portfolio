@@ -3,7 +3,7 @@
     <!-- HEADER -->
     <section class="header">
       <h1>Bonjour, je suis <span class="highlight">Mathias</span></h1>
-      <p>Développeur web junior — React.js / Vue.js & Node.js</p>
+      <p>Développeur web junior - React.js / Vue.js & Node.js</p>
     </section>
 
     <!-- À PROPOS -->
@@ -11,7 +11,7 @@
       <h2>À propos</h2>
       <p>
         Passionné par le web, je me forme activement au développement fullstack.
-        Je cherche à rejoindre une équipe motivée ou à contribuer à des projets concrets.
+        Je cherche à rejoindre une équipe motivée ou à contribuer à des projets concrets. 
       </p>
     </section>
 
@@ -22,12 +22,12 @@
       <div class="project-gallery">
         <div class="project">
           <img src="/images/image1.png" alt="Image projet 1" />
-          <p>Interface d’administration - Vue.js + Node.js</p>
+          <p>Interface d’administration - Vue.js & Node.js</p>
         </div>
         <div class="project">
           <img src="/images/image2.png" alt="Image projet 2" />
           <img src="/images/image3.png" alt="Image projet 3" />
-          <p>Interface utilisateur pour l'utilisation d'une API - Vue.js + python</p>
+          <p>Interface utilisateur connectée à une API - Vue.js & Python</p>
         </div>
       </div>
     </section>
@@ -42,7 +42,7 @@
   </main>
 
   <footer class="footer">
-    © 2025 Mathias — Portfolio personnel
+    © 2025 Mathias - Portfolio personnel
   </footer>
 </template>
 
