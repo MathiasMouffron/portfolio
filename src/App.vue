@@ -18,16 +18,22 @@
     <!-- PROJETS -->
     <section class="projects">
       <h2>Projets</h2>
-      <h4>Exemples de projets réalisés en stage</h4>
-      <div class="project-gallery">
-        <div class="project">
-          <img src="/images/image1.png" alt="Image projet 1" />
-          <p>Interface d’administration - Vue.js & Node.js</p>
-        </div>
-        <div class="project">
-          <img src="/images/image2.png" alt="Image projet 2" />
-          <img src="/images/image3.png" alt="Image projet 3" />
-          <p>Interface utilisateur connectée à une API - Vue.js & Python</p>
+
+      <div v-for="(project, index) in projects" :key="index" class="accordion">
+        <button @click="toggle(index)">
+          {{ project.title }}
+          <span>{{ activeIndex === index ? '▲' : '▼' }}</span>
+        </button>
+
+        <div v-show="activeIndex === index" class="content">
+          <p>{{ project.description }}</p>
+          <p v-if="project.link">
+            <a :href="project.link" target="_blank">Voir le code sur GitHub</a>
+          </p>
+          <div class="screenshots">
+            <img v-for="(img, i) in project.images" :key="i" :src="img" alt="screenshot" />
+          </div>
+          
         </div>
       </div>
     </section>
@@ -46,6 +52,29 @@
   </footer>
 </template>
 
+<script setup>
+import { ref } from 'vue'
+
+const activeIndex = ref(null)
+
+const toggle = (index) => {
+  activeIndex.value = activeIndex.value === index ? null : index
+}
+
+const projects = [
+  {
+    title: 'Projet de stage - Interface d’administration',
+    description: 'Application Vue.js + Node.js ',
+    images: ['/images/image1.png','/images/image2.png','/images/image3.png'],
+  },
+  {
+    title: 'Projet universitaire - Blog',
+    description: 'Blog de jeux vidéo avec Symfony sur Docker.',
+    images: ['/images/image4.png', '/images/image5.png', '/images/image6.png'],
+    link: 'https://github.com/MathiasMouffron/Blog-Symfony'
+  }
+]
+</script>
 
 <style scoped>
 .container {
@@ -57,6 +86,7 @@
   line-height: 1.6;
 }
 
+/* --- Sections principales --- */
 .header {
   text-align: center;
   margin-bottom: 3rem;
@@ -79,41 +109,57 @@ a:hover {
   text-decoration: underline;
 }
 
-.projects h4 {
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  color: #555;
-}
-
-.project-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-
-.project {
-  max-width: 700px;
-  width: 100%;
-  text-align: center;
-}
-
-.project img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-
-
 .footer {
   margin-top: 4rem;
   text-align: center;
   font-size: 0.9rem;
   color: #999;
+}
+
+/* --- Accordéon / Projets --- */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.accordion button {
+  all: unset;
+  width: 95%;
+  padding: 1rem 1.2rem;
+  background: #f3f3f3;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion button:hover {
+  background-color: #e6e6e6;
+}
+
+.content {
+  background: #fafafa;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.screenshots img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 </style>
 
